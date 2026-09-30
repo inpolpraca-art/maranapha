@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #f4f1e9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #25241f;
+}
+
+
+/* =========================================
+   DONATIONS SECTION
+========================================= */
+
+.donations-section {
+    width: 100%;
+    padding: 80px 24px;
+    background: #f4f1e9;
+}
+
+.donations-container {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.donations-card {
+    overflow: hidden;
+
+    background: #eeebe2;
+
+    border: 1px solid #d8d0be;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 22px 55px rgba(45, 40, 30, 0.08);
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.donations-video {
+    width: 100%;
+    overflow: hidden;
+    background: #22211e;
+}
+
+.donations-video video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1064 / 472;
+
+    object-fit: cover;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.donations-content {
+    padding: 52px 58px 58px;
+    text-align: center;
+}
+
+
+/* =========================================
+   SECTION NAME
+========================================= */
+
+.donations-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    color: #927338;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.donations-label::before,
+.donations-label::after {
+    content: "";
+
+    width: 35px;
+    height: 1px;
+
+    background: #b69a61;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.donations-title {
+    max-width: 850px;
+
+    margin: 0 auto 20px;
+
+    color: #25241f;
+
+    font-size: clamp(38px, 5vw, 60px);
+
+    line-height: 1.04;
+
+    font-weight: 500;
+
+    letter-spacing: -.04em;
+}
+
+.donations-title span {
+    color: #927338;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.donations-description {
+    max-width: 720px;
+
+    margin: 0 auto 44px;
+
+    color: #68645c;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+.donations-description strong {
+    color: #282720;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.donations-stats {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 1px;
+
+    max-width: 820px;
+
+    margin: 0 auto 40px;
+
+    background: #d8d0be;
+
+    border: 1px solid #d8d0be;
+}
+
+.donation-stat {
+    padding: 30px 20px;
+
+    background: #eeebe2;
+}
+
+.stat-label {
+    display: block;
+
+    margin-bottom: 11px;
+
+    color: #777269;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+}
+
+.stat-value {
+    display: block;
+
+    color: #292821;
+
+    font-size: clamp(32px, 4vw, 47px);
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    letter-spacing: -.035em;
+}
+
+.stat-value.gold {
+    color: #927338;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-area {
+    max-width: 820px;
+
+    margin: 0 auto 42px;
+
+    text-align: left;
+}
+
+.progress-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 11px;
+
+    color: #716d64;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+}
+
+.progress-percent {
+    color: #927338;
+
+    font-size: 14px;
+}
+
+.progress-track {
+    width: 100%;
+
+    height: 8px;
+
+    overflow: hidden;
+
+    background: #d9d3c7;
+}
+
+.progress-fill {
+    width: 60%;
+
+    height: 100%;
+
+    background: #927338;
+}
+
+.progress-deadline {
+    margin-top: 12px;
+
+    color: #77736a;
+
+    font-size: 12px;
+}
+
+.progress-deadline strong {
+    color: #292821;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.support-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    min-width: 290px;
+
+    padding: 21px 38px;
+
+    border: 1px solid #25241f;
+
+    background: #25241f;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.support-button:hover {
+    background: #927338;
+
+    border-color: #927338;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(146, 115, 56, .20);
+}
+
+.support-arrow {
+    font-size: 20px;
+
+    transition:
+        transform .25s ease;
+}
+
+.support-button:hover .support-arrow {
+    transform: translateX(6px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .donations-section {
+        padding: 40px 14px 55px;
+    }
+
+    .donations-content {
+        padding: 40px 20px 44px;
+    }
+
+    .donations-title {
+        font-size: 39px;
+    }
+
+    .donations-description {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .donations-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .donation-stat {
+        padding: 25px 18px;
+    }
+
+    .support-button {
+        width: 100%;
+        min-width: 0;
+
+        padding: 20px 25px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<section class="donations-section">
+
+    <div class="donations-container">
+
+        <div class="donations-card">
+
+
+            <!-- ==========================
+                 VIDEO
+            =========================== -->
+
+            <div class="donations-video">
+
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="auto"
+                    disablepictureinpicture
+                    disableremoteplayback
+                >
+
+                    <source
+                        src="./assessts/video_2026-09-30_18-01-41.mp4"
+                        type="video/mp4"
+                    >
+
+                </video>
+
+            </div>
+
+
+            <!-- ==========================
+                 CONTENT
+            =========================== -->
+
+            <div class="donations-content">
+
+
+                <div class="donations-label">
+                    Donations & Project Support
+                </div>
+
+
+                <h2 class="donations-title">
+
+                    Help us complete
+                    this <span>project</span>
+
+                </h2>
+
+
+                <p class="donations-description">
+
+                    The project is already underway.
+                    Thanks to the generosity of our supporters,
+                    we have already raised
+                    <strong>more than 1,500,000 PLN</strong>.
+
+                    <br><br>
+
+                    We still need
+                    <strong>1,000,000 PLN</strong>
+                    to reach our goal by
+                    <strong>October 26</strong>.
+
+                    Every contribution, no matter the size,
+                    can help us move closer to completing
+                    this project.
+
+                </p>
+
+
+                <!-- STATS -->
+
+                <div class="donations-stats">
+
+
+                    <div class="donation-stat">
+
+                        <span class="stat-label">
+                            Already raised
+                        </span>
+
+                        <span class="stat-value gold">
+                            1.5M+ PLN
+                        </span>
+
+                    </div>
+
+
+                    <div class="donation-stat">
+
+                        <span class="stat-label">
+                            Still needed
+                        </span>
+
+                        <span class="stat-value">
+                            1M PLN
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- PROGRESS -->
+
+                <div class="progress-area">
+
+
+                    <div class="progress-header">
+
+                        <span>
+                            Fundraising progress
+                        </span>
+
+                        <span class="progress-percent">
+                            60%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-track">
+
+                        <div class="progress-fill"></div>
+
+                    </div>
+
+
+                    <div class="progress-deadline">
+
+                        Fundraising deadline:
+                        <strong>October 26</strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- SUPPORT -->
+
+                <a
+                    href="https://t1p.de/kpd0b"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="support-button"
+                >
+
+                    Support the Project
+
+                    <span class="support-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</body>
+</html>
